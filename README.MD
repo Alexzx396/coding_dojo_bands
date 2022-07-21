@@ -5,6 +5,7 @@ Este examen fue desarrollado para el curso de Codign Dojo con el nombre **Bandas
 
 * **Nombre:** Alex Arce
 * **Pais:** Chile
+* **Pais:** Marcelo Argotti
 
 ## 📁 Datos del proyecto 📁
 
