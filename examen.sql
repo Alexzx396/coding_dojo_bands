@@ -39,7 +39,6 @@ CREATE TABLE `bands` (
 
 LOCK TABLES `bands` WRITE;
 /*!40000 ALTER TABLE `bands` DISABLE KEYS */;
-INSERT INTO `bands` VALUES (22,'Liking Park','California','Rock','2022-07-21 01:17:22','2022-07-21 01:33:42'),(23,'Elton Jhon','Chicago','Contry','2022-07-21 01:17:54','2022-07-21 01:33:36'),(24,'Pearl Jam','Lima','rock','2022-07-21 01:18:36','2022-07-21 01:18:36'),(25,'Peter Rock','Chilito','rock','2022-07-21 01:21:23','2022-07-21 01:21:23');
 /*!40000 ALTER TABLE `bands` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,7 +58,7 @@ CREATE TABLE `join` (
   KEY `fk_Join_users1_idx` (`users_id`),
   CONSTRAINT `fk_Join_Bands1` FOREIGN KEY (`Bands_id`) REFERENCES `bands` (`id`),
   CONSTRAINT `fk_Join_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +67,6 @@ CREATE TABLE `join` (
 
 LOCK TABLES `join` WRITE;
 /*!40000 ALTER TABLE `join` DISABLE KEYS */;
-INSERT INTO `join` VALUES (17,22,5),(18,25,5);
 /*!40000 ALTER TABLE `join` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -88,7 +86,7 @@ CREATE TABLE `users` (
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,7 +95,6 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (5,'Alex','Suarez','perro@hotmail.com','$2b$12$/oExLQiq//n3j.NWseR3ve.L.VrFLrVxgOhk8ocBACOs07rwoMePi','2022-07-20 23:24:04','2022-07-20 23:24:04'),(6,'Alex','Suarez','arcealex257@gmail.com','$2b$12$bd9zVXXBfeD3Fd4rfoug7.gOj5N6YuF.FSbVUSeaEaGk2UnTmNXUi','2022-07-21 01:35:07','2022-07-21 01:35:07'),(7,'Alex','Suarez','plantastikcl@gmail.com','$2b$12$I6a2HwlkkiZ5sxQ9Zh/nWOxetkWdgg39mEC/QDw8cxdNHWxkmrbYq','2022-07-21 01:35:25','2022-07-21 01:35:25');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -110,4 +107,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-21  1:36:56
+-- Dump completed on 2022-07-21 12:11:59
