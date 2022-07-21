@@ -1,0 +1,27 @@
+from server import app as application
+if __name__ == "__main__":
+    application.run()
+
+
+[Unit]
+Description=Gunicorn instance
+After=network.target
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/coding_dojo_bands
+Environment="PATH=/home/ubuntu/coding_dojo_bands/venv/bin"
+ExecStart=/home/ubuntu/coding_dojo_bands/venv/bin/gunicorn --workers 3 --bind unix:coding_dojo_bands.sock -m 007 wsgi:application
+[Install]
+WantedBy=multi-user.target
+
+
+
+server {
+    listen 80;
+    server_name 35.171.19.246;
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/home/ubuntu/coding_dojo_bands/coding_dojo_bands.sock;
+    }
+}
